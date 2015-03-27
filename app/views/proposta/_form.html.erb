@@ -1,0 +1,25 @@
+<%= form_for(@propostum) do |f| %>
+  <% if @propostum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@propostum.errors.count, "error") %> prohibited this propostum from being saved:</h2>
+
+      <ul>
+      <% @propostum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :descricao %><br>
+    <%= f.text_field :descricao %>
+  </div>
+  <div class="field">
+    <%= f.label :votos %><br>
+    <%= f.number_field :votos %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
