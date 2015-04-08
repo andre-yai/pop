@@ -4,7 +4,8 @@ class PropostaController < ApplicationController
   # GET /proposta
   # GET /proposta.json
   def index
-    @proposta = Propostum.all
+    @propostas_decrescente = Propostum.order(votos: :desc).limit (10)
+    @propostas_ultimas = Propostum.order(created_at: :desc).limit (10)
   end
 
   # GET /proposta/1
@@ -28,7 +29,7 @@ class PropostaController < ApplicationController
 
     respond_to do |format|
       if @propostum.save
-        format.html { redirect_to @propostum, notice: 'Propostum was successfully created.' }
+        format.html { redirect_to proposta_url}
         format.json { render :show, status: :created, location: @propostum }
       else
         format.html { render :new }
@@ -59,6 +60,10 @@ class PropostaController < ApplicationController
       format.html { redirect_to proposta_url, notice: 'Propostum was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def ordena_votos_decrescente
+    Proposta.column_votos.include?(params[:sort]) ? params[:sort] : "votos"
   end
 
   private

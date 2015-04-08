@@ -1,27 +1,82 @@
-<h1>Listing proposta</h1>
+<table>
+
+  <caption>Lista de Propostas</caption>
+<tr>
+<td>
+
 
 <table>
+  <caption>Top 10</caption>
   <thead>
     <tr>
-      <th>Descricao</th>
+      <th>Descrição</th>
       <th>Votos</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
+  <tfoot>
+    <tr>
+      <td><a href="https://google.com">todos</a></td>
+    </tr>
+  </tfoot>
+
   <tbody>
-    <% @proposta.each do |propostum| %>
+    <% @propostas_decrescente.each do |propostum| %>
       <tr>
         <td><%= propostum.descricao %></td>
         <td><%= propostum.votos %></td>
+	<!-- Remove esses links por não serem necessários no momento -->
+	<!-- 
         <td><%= link_to 'Show', propostum %></td>
         <td><%= link_to 'Edit', edit_propostum_path(propostum) %></td>
         <td><%= link_to 'Destroy', propostum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	-->
       </tr>
     <% end %>
   </tbody>
 </table>
 
+</td>
+
+<td>
+
+<table>
+  <caption>Ultimas 10</caption>
+  <thead>
+    <tr>
+      <th>Descrição</th>
+      <th>Votos</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody >
+    <% @propostas_ultimas.each do |propostum| %>
+      <tr>
+        <td><%= propostum.descricao %></td>
+        <td><%= propostum.votos %></td>
+	<!-- Remove esses links por não serem necessários no momento -->
+	<!-- 
+        <td><%= link_to 'Show', propostum %></td>
+        <td><%= link_to 'Edit', edit_propostum_path(propostum) %></td>
+        <td><%= link_to 'Destroy', propostum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	-->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</td>
+</tr>
+
+</table>
+
+
+
+
 <br>
 
-<%= link_to 'New Propostum', new_propostum_path %>
+<div id="nova_proposta">
+	<%= link_to 'Nova Proposta', new_propostum_path, :class => "btn btn-lg btn-default"%>
+</div>

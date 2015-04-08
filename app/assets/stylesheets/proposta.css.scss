@@ -1,3 +1,18 @@
 // Place all the styles related to the Proposta controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+table {
+	width: 20em;
+	margin: 3em auto;
+}
+table caption {
+	text-align: center;
+	font-size: 2em;
+	margin-bottom: 1em;
+}
+
+#nova_proposta {
+	margin: 0 auto;
+	width: 10em;
+}
