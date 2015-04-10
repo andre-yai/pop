@@ -1,11 +1,4 @@
 <table>
-
-  <caption>Lista de Propostas</caption>
-<tr>
-<td>
-
-
-<table>
   <caption>Top 10</caption>
   <thead>
     <tr>
@@ -36,44 +29,6 @@
     <% end %>
   </tbody>
 </table>
-
-</td>
-
-<td>
-
-<table>
-  <caption>Ultimas 10</caption>
-  <thead>
-    <tr>
-      <th>Descrição</th>
-      <th>Votos</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody >
-    <% @propostas_ultimas.each do |propostum| %>
-      <tr>
-        <td><%= propostum.descricao %></td>
-        <td><%= propostum.votos %></td>
-	<!-- Remove esses links por não serem necessários no momento -->
-	<!-- 
-        <td><%= link_to 'Show', propostum %></td>
-        <td><%= link_to 'Edit', edit_propostum_path(propostum) %></td>
-        <td><%= link_to 'Destroy', propostum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-	-->
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-</td>
-</tr>
-
-</table>
-
-
-
 
 <br>
 
