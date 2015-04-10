@@ -1,5 +1,5 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-
+  layout "menu_application"
   # POST /resource
   def create
    super do |resource|
